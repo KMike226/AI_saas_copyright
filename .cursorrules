@@ -1,0 +1,177 @@
+# Règles Cursor pour AI SaaS Copyright
+
+## Règles Git
+
+### Messages de commit en français
+- Tous les messages de commit doivent être rédigés en français
+- Utilisez des verbes à l'infinitif pour décrire l'action
+- Exemples :
+  - `Ajouter la détection automatique de violations de droits d'auteur`
+  - `Corriger le bug de scan des images`
+  - `Mettre à jour l'API de génération de rapports`
+  - `Refactoriser le moteur d'IA de détection`
+  - `Optimiser les performances de l'analyse de contenu`
+
+### Dates des commits
+- Tous les commits doivent avoir des dates entre février et mai 2025
+- Utilisez des dates cohérentes avec le développement du projet
+- Exemples de dates valides :
+  - `2025-02-15T14:30:00+0200`
+  - `2025-03-22T09:15:00+0200`
+  - `2025-04-10T16:45:00+0200`
+  - `2025-05-28T11:20:00+0200`
+
+### Structure des messages de commit
+```
+<type>: <description>
+
+[corps du message optionnel]
+
+[footer optionnel]
+```
+
+Types acceptés :
+- `feat`: Nouvelle fonctionnalité
+- `fix`: Correction de bug
+- `docs`: Documentation
+- `style`: Formatage, point-virgules manquants, etc.
+- `refactor`: Refactorisation du code
+- `test`: Ajout ou modification de tests
+- `chore`: Tâches de maintenance
+- `ai`: Modifications liées à l'IA/ML
+- `security`: Améliorations de sécurité
+- `perf`: Optimisations de performance
+
+## Règles de développement
+
+### Code
+- Utilisez TypeScript pour tout le code JavaScript
+- Suivez les conventions ESLint et Prettier
+- Écrivez des tests unitaires pour les nouvelles fonctionnalités
+- Documentez les fonctions complexes, surtout celles liées à l'IA
+- Utilisez des noms de variables et fonctions en anglais pour le code
+- Commentaires en français pour expliquer la logique métier
+
+### Structure des fichiers
+- Organisez les composants par fonctionnalité
+- Utilisez des noms de fichiers descriptifs
+- Groupez les fichiers liés dans des dossiers
+- Structure recommandée :
+  ```
+  src/
+  ├── components/     # Composants React
+  ├── pages/         # Pages de l'application
+  ├── services/      # Services API
+  ├── ai/            # Moteur d'IA
+  ├── utils/         # Utilitaires
+  └── types/         # Types TypeScript
+  ```
+
+### IA et Machine Learning
+- Documentez les modèles d'IA utilisés
+- Incluez des exemples d'utilisation pour les fonctions d'IA
+- Testez les performances des modèles
+- Versionnez les modèles entraînés
+- Documentez les métriques de performance
+
+### Sécurité
+- Validez toutes les entrées utilisateur
+- Utilisez des requêtes préparées pour la base de données
+- Implémentez l'authentification et l'autorisation
+- Chiffrez les données sensibles
+- Audit des logs de sécurité
+
+## Règles de collaboration
+
+### Branches
+- Utilisez des noms de branches descriptifs en français
+- Exemples : `feature/detection-ia`, `fix/bug-scan-images`, `ai/optimisation-modeles`
+- Créez une branche pour chaque fonctionnalité ou correction
+
+### Pull Requests
+- Rédigez les descriptions de PR en français
+- Incluez une description détaillée des changements
+- Référencez les issues liées
+- Demandez des revues de code
+- Incluez des tests pour les nouvelles fonctionnalités
+
+### Issues
+- Créez des issues en français
+- Utilisez des labels appropriés
+- Fournissez des étapes de reproduction pour les bugs
+- Incluez des captures d'écran si nécessaire
+
+## Exemples de commandes Git
+
+```bash
+# Commit avec date personnalisée
+export GIT_AUTHOR_DATE='2025-03-15T14:30:00+0200'
+export GIT_COMMITTER_DATE='2025-03-15T14:30:00+0200'
+git commit -m "feat: Ajouter la détection automatique de violations"
+
+# Amender un commit avec nouvelle date
+export GIT_AUTHOR_DATE='2025-04-20T10:15:00+0200'
+export GIT_COMMITTER_DATE='2025-04-20T10:15:00+0200'
+git commit --amend --no-edit
+
+# Commit pour une fonctionnalité IA
+git commit -m "ai: Optimiser le modèle de détection de contenu"
+
+# Commit pour la sécurité
+git commit -m "security: Renforcer l'authentification JWT"
+```
+
+## Configuration recommandée
+
+### .gitconfig
+```ini
+[user]
+    name = Votre Nom
+    email = votre.email@example.com
+
+[commit]
+    template = .gitmessage
+
+[core]
+    editor = code --wait
+```
+
+### .gitmessage
+```
+# <type>: <description>
+
+# <corps du message>
+
+# <footer>
+```
+
+## Standards de qualité
+
+### Tests
+- Couverture de code minimum : 80%
+- Tests unitaires pour toutes les fonctions d'IA
+- Tests d'intégration pour les API
+- Tests E2E pour les flux critiques
+
+### Performance
+- Temps de réponse API < 500ms
+- Temps de scan IA < 5s
+- Optimisation des requêtes base de données
+- Mise en cache des résultats fréquents
+
+### Documentation
+- README à jour
+- Documentation API avec Swagger
+- Guide de déploiement
+- Documentation des modèles d'IA
+
+## Rappels importants
+
+- ✅ Toujours écrire les messages de commit en français
+- ✅ Utiliser des dates entre février et mai 2025
+- ✅ Suivre la structure des messages de commit
+- ✅ Tester le code avant de committer
+- ✅ Documenter les fonctionnalités d'IA
+- ✅ Maintenir la sécurité comme priorité
+- ✅ Optimiser les performances
+- ✅ Demander des revues de code pour les changements importants
