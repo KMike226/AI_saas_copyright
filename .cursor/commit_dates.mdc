@@ -1,0 +1,153 @@
+---
+description: Règles pour les dates de commit dans le projet AI SaaS Copyright
+globs: **/*
+alwaysApply: true
+---
+
+# Règles de Dates de Commit
+
+## **Dates Obligatoires**
+- Tous les commits doivent avoir des dates entre **février et mai 2025**
+- Utilisez des dates cohérentes avec le développement du projet
+- Respectez la chronologie logique du développement
+
+## **Format des Dates**
+- Format ISO 8601 avec timezone : `YYYY-MM-DDTHH:MM:SS+TZ:TZ`
+- Exemple : `2025-03-15T14:30:00+0200`
+- Timezone recommandée : `+0200` (Europe/Paris)
+
+## **Plage de Dates Valides**
+
+### **Février 2025**
+- `2025-02-01T00:00:00+0200` à `2025-02-28T23:59:59+0200`
+- Exemples :
+  - `2025-02-15T14:30:00+0200`
+  - `2025-02-22T09:15:00+0200`
+  - `2025-02-28T16:45:00+0200`
+
+### **Mars 2025**
+- `2025-03-01T00:00:00+0200` à `2025-03-31T23:59:59+0200`
+- Exemples :
+  - `2025-03-01T10:00:00+0200`
+  - `2025-03-15T14:30:00+0200`
+  - `2025-03-22T09:15:00+0200`
+  - `2025-03-31T18:20:00+0200`
+
+### **Avril 2025**
+- `2025-04-01T00:00:00+0200` à `2025-04-30T23:59:59+0200`
+- Exemples :
+  - `2025-04-05T11:30:00+0200`
+  - `2025-04-10T16:45:00+0200`
+  - `2025-04-20T08:15:00+0200`
+  - `2025-04-30T17:00:00+0200`
+
+### **Mai 2025**
+- `2025-05-01T00:00:00+0200` à `2025-05-31T23:59:59+0200`
+- Exemples :
+  - `2025-05-02T10:00:00+0200`
+  - `2025-05-15T13:45:00+0200`
+  - `2025-05-28T11:20:00+0200`
+  - `2025-05-31T19:30:00+0200`
+
+## **Chronologie de Développement**
+
+### **Phase 1 - Infrastructure (Février-Mars 2025)**
+- **Février 2025** : Configuration initiale, setup Docker, base de données
+- **Mars 2025** : Authentification, API backend, interface de base
+
+### **Phase 2 - Fonctionnalités Core (Mars-Avril 2025)**
+- **Mars 2025** : Gestion des contenus, moteur de détection de base
+- **Avril 2025** : Notifications, dashboard, rapports
+
+### **Phase 3 - Fonctionnalités Avancées (Avril-Mai 2025)**
+- **Avril 2025** : Détection d'images, API complète, intégrations
+- **Mai 2025** : Optimisations, sécurité, tests, déploiement
+
+## **Commandes Git avec Dates**
+
+### **Commit avec Date Personnalisée**
+```bash
+# Exemple pour mars 2025
+export GIT_AUTHOR_DATE='2025-03-15T14:30:00+0200'
+export GIT_COMMITTER_DATE='2025-03-15T14:30:00+0200'
+git commit -m "feat: Ajouter la détection automatique de violations"
+```
+
+### **Amender un Commit avec Nouvelle Date**
+```bash
+# Exemple pour avril 2025
+export GIT_AUTHOR_DATE='2025-04-20T10:15:00+0200'
+export GIT_COMMITTER_DATE='2025-04-20T10:15:00+0200'
+git commit --amend --no-edit
+```
+
+### **Script pour Dates Aléatoires dans la Plage**
+```bash
+#!/bin/bash
+# Génère une date aléatoire entre février et mai 2025
+YEAR=2025
+MONTH=$((RANDOM % 4 + 2))  # 2-5 (février-mai)
+DAY=$((RANDOM % 28 + 1))   # 1-28 (évite les problèmes de jours)
+HOUR=$((RANDOM % 24))
+MINUTE=$((RANDOM % 60))
+SECOND=$((RANDOM % 60))
+
+DATE="${YEAR}-$(printf "%02d" $MONTH)-$(printf "%02d" $DAY)T$(printf "%02d" $HOUR):$(printf "%02d" $MINUTE):$(printf "%02d" $SECOND)+0200"
+
+export GIT_AUTHOR_DATE="$DATE"
+export GIT_COMMITTER_DATE="$DATE"
+echo "Date générée : $DATE"
+```
+
+## **Validation des Dates**
+
+### **Vérification Automatique**
+- Utilisez des hooks Git pour valider les dates
+- Script de validation dans `.git/hooks/pre-commit`
+
+### **Règles de Validation**
+- ✅ Date entre 2025-02-01 et 2025-05-31
+- ✅ Format ISO 8601 correct
+- ✅ Timezone +0200
+- ❌ Dates en dehors de la plage
+- ❌ Format incorrect
+- ❌ Timezone différente
+
+## **Exemples d'Utilisation**
+
+### **Commits d'Infrastructure (Février 2025)**
+```bash
+export GIT_AUTHOR_DATE='2025-02-15T14:30:00+0200'
+export GIT_COMMITTER_DATE='2025-02-15T14:30:00+0200'
+git commit -m "feat: Configurer Docker et base de données PostgreSQL"
+```
+
+### **Commits de Fonctionnalités (Mars 2025)**
+```bash
+export GIT_AUTHOR_DATE='2025-03-22T09:15:00+0200'
+export GIT_COMMITTER_DATE='2025-03-22T09:15:00+0200'
+git commit -m "feat: Implémenter l'authentification JWT"
+```
+
+### **Commits d'IA (Avril 2025)**
+```bash
+export GIT_AUTHOR_DATE='2025-04-10T16:45:00+0200'
+export GIT_COMMITTER_DATE='2025-04-10T16:45:00+0200'
+git commit -m "ai: Optimiser le modèle de détection de contenu"
+```
+
+### **Commits de Sécurité (Mai 2025)**
+```bash
+export GIT_AUTHOR_DATE='2025-05-28T11:20:00+0200'
+export GIT_COMMITTER_DATE='2025-05-28T11:20:00+0200'
+git commit -m "security: Renforcer l'authentification et l'audit"
+```
+
+## **Rappels Importants**
+
+- ✅ **Toujours** utiliser des dates entre février et mai 2025
+- ✅ **Respecter** la chronologie logique du développement
+- ✅ **Utiliser** le format ISO 8601 avec timezone +0200
+- ✅ **Cohérence** avec l'historique des commits existants
+- ❌ **Éviter** les dates en dehors de la plage autorisée
+- ❌ **Ne pas** utiliser des dates futures ou passées incohérentes
