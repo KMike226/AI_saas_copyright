@@ -1,0 +1,176 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Configuration de l'infrastructure de base",
+      "description": "Mettre en place l'infrastructure Docker, la base de données PostgreSQL, Redis pour le cache, et la configuration de base du projet",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": [],
+      "tags": ["infrastructure", "docker", "database"],
+      "estimatedHours": 8,
+      "complexity": 3
+    },
+    {
+      "id": "2", 
+      "title": "Système d'authentification et gestion des utilisateurs",
+      "description": "Implémenter l'authentification JWT, la gestion des rôles et permissions, et l'inscription/connexion des utilisateurs",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["1"],
+      "tags": ["auth", "security", "users"],
+      "estimatedHours": 12,
+      "complexity": 4
+    },
+    {
+      "id": "3",
+      "title": "API Backend - Endpoints essentiels",
+      "description": "Créer les endpoints API de base pour la gestion des contenus, utilisateurs, et les opérations CRUD",
+      "status": "pending", 
+      "priority": "high",
+      "dependencies": ["1", "2"],
+      "tags": ["api", "backend", "rest"],
+      "estimatedHours": 16,
+      "complexity": 4
+    },
+    {
+      "id": "4",
+      "title": "Interface utilisateur de base",
+      "description": "Développer l'interface React avec navigation, formulaires de base, et structure responsive",
+      "status": "pending",
+      "priority": "high", 
+      "dependencies": ["2"],
+      "tags": ["frontend", "react", "ui"],
+      "estimatedHours": 20,
+      "complexity": 3
+    },
+    {
+      "id": "5",
+      "title": "Gestion des contenus - Upload et stockage",
+      "description": "Implémenter l'upload de fichiers, le stockage sécurisé, et la gestion des métadonnées des contenus",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["3", "4"],
+      "tags": ["content", "storage", "upload"],
+      "estimatedHours": 14,
+      "complexity": 4
+    },
+    {
+      "id": "6",
+      "title": "Moteur de détection de base - Analyse de texte",
+      "description": "Développer l'algorithme de base pour détecter les similarités dans les textes et identifier les violations potentielles",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["5"],
+      "tags": ["ai", "detection", "text"],
+      "estimatedHours": 18,
+      "complexity": 5
+    },
+    {
+      "id": "7",
+      "title": "Système de notifications",
+      "description": "Implémenter les alertes email, notifications dashboard, et le système d'escalade automatique",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["6"],
+      "tags": ["notifications", "alerts", "email"],
+      "estimatedHours": 10,
+      "complexity": 3
+    },
+    {
+      "id": "8",
+      "title": "Dashboard avec métriques essentielles",
+      "description": "Créer le tableau de bord principal avec les métriques de protection, statistiques, et visualisations de base",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["7"],
+      "tags": ["dashboard", "metrics", "analytics"],
+      "estimatedHours": 12,
+      "complexity": 3
+    },
+    {
+      "id": "9",
+      "title": "Détection d'images et médias",
+      "description": "Étendre le moteur de détection pour analyser les images, vidéos et autres médias avec l'IA",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["6"],
+      "tags": ["ai", "images", "media"],
+      "estimatedHours": 22,
+      "complexity": 6
+    },
+    {
+      "id": "10",
+      "title": "Système de rapports détaillés",
+      "description": "Développer la génération de rapports PDF, exports de données, et analyses approfondies",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["8"],
+      "tags": ["reports", "exports", "pdf"],
+      "estimatedHours": 16,
+      "complexity": 4
+    },
+    {
+      "id": "11",
+      "title": "API REST complète et documentation",
+      "description": "Finaliser l'API avec tous les endpoints, documentation Swagger, et tests d'intégration",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["3", "9"],
+      "tags": ["api", "documentation", "swagger"],
+      "estimatedHours": 14,
+      "complexity": 3
+    },
+    {
+      "id": "12",
+      "title": "Intégrations avec plateformes populaires",
+      "description": "Développer les intégrations avec WordPress, Shopify, et autres CMS populaires",
+      "status": "pending",
+      "priority": "low",
+      "dependencies": ["11"],
+      "tags": ["integrations", "wordpress", "cms"],
+      "estimatedHours": 20,
+      "complexity": 4
+    },
+    {
+      "id": "13",
+      "title": "Optimisation des performances et cache",
+      "description": "Implémenter la mise en cache intelligente, optimisation des requêtes, et amélioration des temps de réponse",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["10"],
+      "tags": ["performance", "cache", "optimization"],
+      "estimatedHours": 12,
+      "complexity": 4
+    },
+    {
+      "id": "14",
+      "title": "Sécurité avancée et audit",
+      "description": "Renforcer la sécurité, implémenter l'audit des logs, et assurer la conformité aux standards",
+      "status": "pending",
+      "priority": "high",
+      "dependencies": ["13"],
+      "tags": ["security", "audit", "compliance"],
+      "estimatedHours": 16,
+      "complexity": 5
+    },
+    {
+      "id": "15",
+      "title": "Tests automatisés et déploiement",
+      "description": "Créer les tests unitaires, d'intégration, E2E, et configurer le pipeline de déploiement CI/CD",
+      "status": "pending",
+      "priority": "medium",
+      "dependencies": ["14"],
+      "tags": ["testing", "deployment", "cicd"],
+      "estimatedHours": 18,
+      "complexity": 4
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2025-03-15T14:30:00+0200",
+    "totalTasks": 15,
+    "estimatedTotalHours": 222,
+    "project": "AI SaaS Copyright"
+  }
+}
